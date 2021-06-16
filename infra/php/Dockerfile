@@ -14,4 +14,9 @@ RUN apt-get update && \
 
 COPY ./php.ini /usr/local/etc/php/php.ini
 
+RUN curl -SL https://deb.nodesource.com/setup_14.x | bash
+RUN apt-get install -y nodejs && \
+  npm install -g npm@latest && \
+  npm install -g @vue/cli
+
 WORKDIR /work
